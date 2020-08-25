@@ -1,0 +1,164 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pnml>
+  <net id="net1" type="http://www.pnml.org/version-2009/grammar/pnmlcoremodel">
+    <page id="n0">
+      <place id="node5">
+        <name>
+          <text>{[decide+ ]} --&gt; {[reinitiate request+ , reject request+ , pay compensation+ ]}</text>
+        </name>
+        <graphics>
+          <position x="268.75" y="123.0"/>
+          <dimension x="12.5" y="12.5"/>
+        </graphics>
+      </place>
+      <place id="node6">
+        <name>
+          <text>Start</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+        <graphics>
+          <position x="6.25" y="81.0"/>
+          <dimension x="12.5" y="12.5"/>
+        </graphics>
+      </place>
+      <place id="node3">
+        <name>
+          <text>{[reinitiate request+ , register request+ ]} --&gt; {[check ticket+ ]}</text>
+        </name>
+        <graphics>
+          <position x="356.25" y="75.5"/>
+          <dimension x="12.5" y="12.5"/>
+        </graphics>
+      </place>
+      <place id="node7">
+        <name>
+          <text>End</text>
+        </name>
+        <graphics>
+          <position x="443.75" y="120.0"/>
+          <dimension x="12.5" y="12.5"/>
+        </graphics>
+      </place>
+      <place id="node4">
+        <name>
+          <text>{[reinitiate request+ , register request+ ]} --&gt; {[examine casually+ , examine thoroughly+ ]}</text>
+        </name>
+        <graphics>
+          <position x="93.75" y="95.0"/>
+          <dimension x="12.5" y="12.5"/>
+        </graphics>
+      </place>
+      <place id="node2">
+        <name>
+          <text>{[examine casually+ , examine thoroughly+ ]} --&gt; {[decide+ ]}</text>
+        </name>
+        <graphics>
+          <position x="181.25" y="115.0"/>
+          <dimension x="12.5" y="12.5"/>
+        </graphics>
+      </place>
+      <place id="node1">
+        <name>
+          <text>{[check ticket+ ]} --&gt; {[decide+ ]}</text>
+        </name>
+        <graphics>
+          <position x="443.75" y="55.5"/>
+          <dimension x="12.5" y="12.5"/>
+        </graphics>
+      </place>
+      <transition id="node12">
+        <name>
+          <text>register request+ </text>
+        </name>
+        <graphics>
+          <position x="50.0" y="81.0"/>
+          <dimension x="25.0" y="20.0"/>
+        </graphics>
+      </transition>
+      <transition id="node9">
+        <name>
+          <text>examine casually+ </text>
+        </name>
+        <graphics>
+          <position x="137.5" y="134.0"/>
+          <dimension x="25.0" y="20.0"/>
+        </graphics>
+      </transition>
+      <transition id="node15">
+        <name>
+          <text>examine thoroughly+ </text>
+        </name>
+        <graphics>
+          <position x="137.5" y="99.0"/>
+          <dimension x="25.0" y="20.0"/>
+        </graphics>
+      </transition>
+      <transition id="node13">
+        <name>
+          <text>pay compensation+ </text>
+        </name>
+        <graphics>
+          <position x="400.0" y="103.0"/>
+          <dimension x="25.0" y="20.0"/>
+        </graphics>
+      </transition>
+      <transition id="node10">
+        <name>
+          <text>reject request+ </text>
+        </name>
+        <graphics>
+          <position x="400.0" y="138.0"/>
+          <dimension x="25.0" y="20.0"/>
+        </graphics>
+      </transition>
+      <transition id="node14">
+        <name>
+          <text>check ticket+ </text>
+        </name>
+        <graphics>
+          <position x="400.0" y="68.0"/>
+          <dimension x="25.0" y="20.0"/>
+        </graphics>
+      </transition>
+      <transition id="node11">
+        <name>
+          <text>decide+ </text>
+        </name>
+        <graphics>
+          <position x="225.0" y="113.0"/>
+          <dimension x="25.0" y="20.0"/>
+        </graphics>
+      </transition>
+      <transition id="node8">
+        <name>
+          <text>reinitiate request+ </text>
+        </name>
+        <graphics>
+          <position x="312.5" y="95.5"/>
+          <dimension x="25.0" y="20.0"/>
+        </graphics>
+      </transition>
+      <arc id="-9223371909899979772" source="node12" target="node4"/>
+      <arc id="-9223371909899979768" source="node2" target="node11"/>
+      <arc id="-9223371909899979764" source="node8" target="node3"/>
+      <arc id="-9223371909899979756" source="node4" target="node9"/>
+      <arc id="-9223371909899979748" source="node14" target="node1"/>
+      <arc id="-9223371909899979744" source="node11" target="node5"/>
+      <arc id="-9223371909899979740" source="node6" target="node12"/>
+      <arc id="-9223371909899979736" source="node13" target="node7"/>
+      <arc id="-9223371909899979732" source="node8" target="node4"/>
+      <arc id="-9223371909899979728" source="node5" target="node10"/>
+      <arc id="-9223371909899980868" source="node1" target="node11"/>
+      <arc id="-9223371909899979712" source="node12" target="node3"/>
+      <arc id="-9223371909899979708" source="node5" target="node13"/>
+      <arc id="-9223371909899980856" source="node5" target="node8"/>
+      <arc id="-9223371909899980848" source="node9" target="node2"/>
+      <arc id="-9223371909899980840" source="node4" target="node15"/>
+      <arc id="-9223371909899980820" source="node10" target="node7"/>
+      <arc id="-9223371909899980812" source="node15" target="node2"/>
+      <arc id="-9223371909899980808" source="node3" target="node14"/>
+    </page>
+  </net>
+</pnml>
